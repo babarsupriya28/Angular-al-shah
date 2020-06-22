@@ -1,4 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
 .clsName{
-    background-color: gray;
+    background: linear-gradient(to bottom, #000000  0%, #ffffff 100%)
 }

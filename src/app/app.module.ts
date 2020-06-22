@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { SqrtPipe } from './sqrt.pipe';
@@ -17,7 +18,7 @@ import { WashingMashineComponent } from './products/washing-mashine/washing-mash
 
 @NgModule({
   declarations: [AppComponent, SqrtPipe, FooterComponent, BannerOneComponent, BannerTwoComponent, BannerThreeComponent, NavComponent, ProductsComponent, ContactUsComponent, MobPartComponent, LaptopsComponent, LEDComponent, WashingMashineComponent],
-  imports: [BrowserModule], // module : group of logics
+  imports: [BrowserModule,FormsModule], // module : group of logics
   bootstrap: [AppComponent], // to run : root compo
 })
 export class AppModule {}

@@ -72,5 +72,9 @@ export class MobPartComponent implements OnInit {
  downQuantity(mobParts){
   if(mobParts.inStock<mobParts.quantity)mobParts.quantity--;
 }
+inputQuntity(data){
+  console.log("i am in input quantity",data);
+
+}
 
 }

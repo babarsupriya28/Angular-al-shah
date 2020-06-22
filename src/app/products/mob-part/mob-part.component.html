@@ -31,6 +31,8 @@
                 </ng-template>
                 <p>
                   <a class="waves-effect waves-light btn-small"(click)="downQuantity(mobPart)"><i class="material-icons">remove</i></a>
+                  <!-- <input [value]="mobPart.quantity" (input)="inputQuntity($event.target.value)"> -->
+                  <input [(ngModel)]="mobPart.quantity">
                   {{mobPart.quantity}}
                   <a class="waves-effect waves-light btn-small" (click)="upQuantity(mobPart)"><i class="material-icons">add</i></a>
                 </p>

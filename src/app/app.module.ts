@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms'
+import { NgModule, Component } from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {RouterModule, Route, Routes} from '@angular/router'
 
 import { AppComponent } from './app.component';
 import { SqrtPipe } from './sqrt.pipe';
@@ -15,10 +16,22 @@ import { MobPartComponent } from './products/mob-part/mob-part.component';
 import { LaptopsComponent } from './products/laptops/laptops.component';
 import { LEDComponent } from './products/led/led.component';
 import { WashingMashineComponent } from './products/washing-mashine/washing-mashine.component';
+import { PagenotfoundComponent } from './layout/pagenotfound/pagenotfound.component';
+import { HomeComponent } from './layout/home/home.component';
 
+const appRoutes:Routes=[
+  {path:'',component:HomeComponent},
+  {path:'home',component:HomeComponent},
+  {path:'mobile',component:MobPartComponent},
+  {path:'lapi',component:LaptopsComponent},
+  {path:'led',component:LEDComponent},
+  {path:'washingM',component:WashingMashineComponent},
+  {path:'**',component:PagenotfoundComponent},
+
+];
 @NgModule({
-  declarations: [AppComponent, SqrtPipe, FooterComponent, BannerOneComponent, BannerTwoComponent, BannerThreeComponent, NavComponent, ProductsComponent, ContactUsComponent, MobPartComponent, LaptopsComponent, LEDComponent, WashingMashineComponent],
-  imports: [BrowserModule,FormsModule], // module : group of logics
+  declarations: [AppComponent, SqrtPipe, FooterComponent, BannerOneComponent, BannerTwoComponent, BannerThreeComponent, NavComponent, ProductsComponent, ContactUsComponent, MobPartComponent, LaptopsComponent, LEDComponent, WashingMashineComponent, PagenotfoundComponent, HomeComponent],
+  imports: [BrowserModule,FormsModule,RouterModule.forRoot(appRoutes)], // module : group of logics
   bootstrap: [AppComponent], // to run : root compo
 })
 export class AppModule {}

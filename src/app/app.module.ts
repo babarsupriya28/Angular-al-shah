@@ -22,11 +22,17 @@ import { MotoComponent } from './products/mob-part/moto/moto.component';
 import { SamComponent } from './products/mob-part/sam/sam.component';
 import { AllComponentModule } from './modules/all-component.module';
 import { AllPipesModule } from './modules/all-pipes.module';
+import { MobilemenuComponent } from './products/mob-part/mobilemenu/mobilemenu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+//import {MatCheckboxModule} from '@angular/material/checkbox';
+
+import { AllMaterialModule } from './modules/all-material.module';
 
 @NgModule({
   declarations: [
-    AppComponent, 
+    AppComponent,
+    MobilemenuComponent, 
     // SqrtPipe, 
     // FooterComponent, 
     // BannerOneComponent, 
@@ -45,7 +51,8 @@ import { AllPipesModule } from './modules/all-pipes.module';
     // SamComponent
   ],
   imports: [BrowserModule,FormsModule, AppRoutingModule, 
-    AllComponentModule, AllPipesModule
+    AllComponentModule, AllPipesModule, BrowserAnimationsModule, 
+    AllMaterialModule,
   ], // module : group of logics
   bootstrap: [AppComponent], // to run : root compo
 })

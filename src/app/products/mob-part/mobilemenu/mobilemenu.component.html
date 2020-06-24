@@ -1,0 +1,25 @@
+<nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a routerLink="/mobile">Mobile Parts</a></li>
+        <li><a routerLink="moto">Moto</a></li>
+        <li><a routerLink="sam">Samsung</a></li>
+        
+      </ul>
+      
+      <!-- <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul> -->
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <mat-checkbox>Check me!</mat-checkbox><br>
+  <mat-form-field>
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <br><br><br>
+  <router-outlet></router-outlet>

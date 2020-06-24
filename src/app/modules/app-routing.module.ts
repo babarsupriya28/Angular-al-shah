@@ -1,3 +1,4 @@
+import { MobilemenuComponent } from './../products/mob-part/mobilemenu/mobilemenu.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
@@ -13,8 +14,9 @@ import { SamComponent } from '../products/mob-part/sam/sam.component';
 const appRoutes:Routes=[
   {path:'',component:HomeComponent},
   {path:'home',component:HomeComponent},
-  {path:'mobile',component:MobPartComponent,
+  {path:'mobile',component:MobilemenuComponent,//nested routing
 children:[
+  {path:'',component:MobPartComponent},
   {path:'moto',component:MotoComponent},
   {path:'sam',component:SamComponent}
 

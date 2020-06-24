@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {RouterModule, Route, Routes} from '@angular/router'
+import { AppRoutingModule } from './modules/app-routing.module';
 
 import { AppComponent } from './app.component';
 import { SqrtPipe } from './sqrt.pipe';
@@ -18,20 +18,35 @@ import { LEDComponent } from './products/led/led.component';
 import { WashingMashineComponent } from './products/washing-mashine/washing-mashine.component';
 import { PagenotfoundComponent } from './layout/pagenotfound/pagenotfound.component';
 import { HomeComponent } from './layout/home/home.component';
+import { MotoComponent } from './products/mob-part/moto/moto.component';
+import { SamComponent } from './products/mob-part/sam/sam.component';
+import { AllComponentModule } from './modules/all-component.module';
+import { AllPipesModule } from './modules/all-pipes.module';
 
-const appRoutes:Routes=[
-  {path:'',component:HomeComponent},
-  {path:'home',component:HomeComponent},
-  {path:'mobile',component:MobPartComponent},
-  {path:'lapi',component:LaptopsComponent},
-  {path:'led',component:LEDComponent},
-  {path:'washingM',component:WashingMashineComponent},
-  {path:'**',component:PagenotfoundComponent},
 
-];
 @NgModule({
-  declarations: [AppComponent, SqrtPipe, FooterComponent, BannerOneComponent, BannerTwoComponent, BannerThreeComponent, NavComponent, ProductsComponent, ContactUsComponent, MobPartComponent, LaptopsComponent, LEDComponent, WashingMashineComponent, PagenotfoundComponent, HomeComponent],
-  imports: [BrowserModule,FormsModule,RouterModule.forRoot(appRoutes)], // module : group of logics
+  declarations: [
+    AppComponent, 
+    // SqrtPipe, 
+    // FooterComponent, 
+    // BannerOneComponent, 
+    // BannerTwoComponent, 
+    // BannerThreeComponent, 
+    // NavComponent, 
+    // ProductsComponent, 
+    // ContactUsComponent, 
+    // MobPartComponent, 
+    // LaptopsComponent, 
+    // LEDComponent, 
+    // WashingMashineComponent, 
+    // PagenotfoundComponent, 
+    // HomeComponent, 
+    // MotoComponent, 
+    // SamComponent
+  ],
+  imports: [BrowserModule,FormsModule, AppRoutingModule, 
+    AllComponentModule, AllPipesModule
+  ], // module : group of logics
   bootstrap: [AppComponent], // to run : root compo
 })
 export class AppModule {}

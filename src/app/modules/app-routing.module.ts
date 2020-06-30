@@ -1,3 +1,6 @@
+import { AuthGuard } from './../guards/auth.guard';
+import { LoginComponent } from './../admin/login/login.component';
+import { DashboardComponent } from './../admin/dashboard/dashboard.component';
 import { MobilemenuComponent } from './../products/mob-part/mobilemenu/mobilemenu.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -25,6 +28,8 @@ children:[
   {path:'lapi',component:LaptopsComponent},
   {path:'led',component:LEDComponent},
   {path:'washingM',component:WashingMashineComponent},
+  {path:'dashboard',canActivate:[AuthGuard],component:DashboardComponent},
+  {path:'login',component:LoginComponent},
   {path:'**',component:PagenotfoundComponent},
 
 ];

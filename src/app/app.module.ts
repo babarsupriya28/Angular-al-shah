@@ -1,8 +1,10 @@
+
+import { ComServiceService } from './services/com-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './modules/app-routing.module';
-
+import { HttpModule} from '@angular/http';
 import { AppComponent } from './app.component';
 import { SqrtPipe } from './sqrt.pipe';
 import { FooterComponent } from './layout/footer/footer.component';
@@ -28,11 +30,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { AllMaterialModule } from './modules/all-material.module';
+import { AuthGuard } from './guards/auth.guard';
+import { LoginComponent } from './admin/login/login.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MobilemenuComponent, 
+    MobilemenuComponent,
+    LoginComponent,
+    DashboardComponent, 
     // SqrtPipe, 
     // FooterComponent, 
     // BannerOneComponent, 
@@ -52,8 +59,14 @@ import { AllMaterialModule } from './modules/all-material.module';
   ],
   imports: [BrowserModule,FormsModule, AppRoutingModule, 
     AllComponentModule, AllPipesModule, BrowserAnimationsModule, 
-    AllMaterialModule,
+    AllMaterialModule,HttpModule
   ], // module : group of logics
   bootstrap: [AppComponent], // to run : root compo
+  providers:
+  [
+    ComServiceService,
+    AuthGuard
+
+  ]
 })
 export class AppModule {}

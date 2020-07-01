@@ -1,1 +1,6 @@
-<p>login works!</p>
+<p>login </p>
+<input type="text" #user /><br>
+<input type="text" #pass /><br>
+<button (click)="check(user.value,pass.value)">Login</button>
+<br>
+<span>{{ msg }}</span>

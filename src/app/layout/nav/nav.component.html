@@ -5,6 +5,9 @@
         <li><a routerLink="home">home</a></li>
         <li><a  routerLink="mobile">Mobile parts</a></li>
         <li><a routerLink="lapi">Laptops</a></li>
+        <li><a *ngIf="!isLogin()" routerLink="login">Login</a></li>
+        <li><a *ngIf="isLogin()" routerLink="home" (click)="logout()">Logout</a></li>
+        <li><a routerLink="dashboard">Dashboard</a></li>
         <li><a routerLink="led">LED</a></li>
         <li><a routerLink="washingM">Washing Machine</a></li>
 

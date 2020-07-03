@@ -1,3 +1,4 @@
+import { AdminGuard } from './../guards/admin.guard';
 import { AuthGuard } from './../guards/auth.guard';
 import { LoginComponent } from './../admin/login/login.component';
 import { DashboardComponent } from './../admin/dashboard/dashboard.component';
@@ -28,9 +29,14 @@ children:[
   {path:'lapi',component:LaptopsComponent},
   {path:'led',component:LEDComponent},
   {path:'washingM',component:WashingMashineComponent},
-  {path:'dashboard',canActivate:[AuthGuard],component:DashboardComponent},
+  {path:'dashboard',canActivate:[AuthGuard,AdminGuard],component:DashboardComponent},
   {path:'login',component:LoginComponent},
+  {
+    path: 'lazy-child',
+    loadChildren: '../modules/lazy/lazy.module#LazyModule',
+  },
   {path:'**',component:PagenotfoundComponent},
+ 
 
 ];
 

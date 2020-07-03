@@ -33,13 +33,18 @@ import { AllMaterialModule } from './modules/all-material.module';
 import { AuthGuard } from './guards/auth.guard';
 import { LoginComponent } from './admin/login/login.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { LazyModule } from './modules/lazy/lazy.module';
+import { LazyTwoComponent } from './modules/lazy/lazy-two/lazy-two.component';
+import { LazyOneComponent } from './modules/lazy/lazy-one/lazy-one.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MobilemenuComponent,
     LoginComponent,
-    DashboardComponent, 
+    DashboardComponent,
+    // LazyTwoComponent,
+    // LazyOneComponent, 
     // SqrtPipe, 
     // FooterComponent, 
     // BannerOneComponent, 
@@ -59,7 +64,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
   ],
   imports: [BrowserModule,FormsModule, AppRoutingModule, 
     AllComponentModule, AllPipesModule, BrowserAnimationsModule, 
-    AllMaterialModule,HttpModule
+    AllMaterialModule,HttpModule, LazyModule
   ], // module : group of logics
   bootstrap: [AppComponent], // to run : root compo
   providers:

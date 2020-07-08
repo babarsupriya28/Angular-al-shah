@@ -1,3 +1,6 @@
+import { firebaseConfig } from './firebase/firebase-config';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AngularFireModule} from 'angularfire2'
 
 import { ComServiceService } from './services/com-service.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -37,6 +40,7 @@ import { LazyModule } from './modules/lazy/lazy.module';
 import { LazyTwoComponent } from './modules/lazy/lazy-two/lazy-two.component';
 import { LazyOneComponent } from './modules/lazy/lazy-one/lazy-one.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +68,9 @@ import { LazyOneComponent } from './modules/lazy/lazy-one/lazy-one.component';
   ],
   imports: [BrowserModule,FormsModule, AppRoutingModule, 
     AllComponentModule, AllPipesModule, BrowserAnimationsModule, 
-    AllMaterialModule,HttpModule, LazyModule
+    AllMaterialModule,HttpModule, LazyModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ], // module : group of logics
   bootstrap: [AppComponent], // to run : root compo
   providers:

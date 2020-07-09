@@ -4,12 +4,48 @@
   <meta charset="utf-8">
   <title>AlShahTheme</title>
   <base href="/">
+  <meta name="google-signin-client_id" content="1076357506420-74m21gjf3c9j322a5b32020j2g19f7kn.apps.googleusercontent.com">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+  <!-- Google onSignIn -->
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <img src="" id="img" width="150px" height="100px">
+  <p id="id"></p>
+  <p id="name"></p>
+  <p id="email"></p>
+  <a href="#" onclick="signOut();">Sign out</a>
+
   <app-root></app-root>
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script>
+    function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  
+    document.getElementById("img").src=profile.getImageUrl();
+    document.getElementById("id").innerHTML=profile.getId();
+    document.getElementById("name").innerHTML=profile.getName();
+    document.getElementById("email").innerHTML=profile.getEmail();
+    
+
+  }
+  
+
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+
+  </script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+import { LapiOffersComponent } from './../products/laptops/lapi-offers/lapi-offers.component';
+import { LapidetailComponent } from './../products/laptops/lapidetail/lapidetail.component';
 import { AdminGuard } from './../guards/admin.guard';
 import { AuthGuard } from './../guards/auth.guard';
 import { LoginComponent } from './../admin/login/login.component';
@@ -27,6 +29,8 @@ children:[
 
 ]},
   {path:'lapi',component:LaptopsComponent},
+  {path:'lapiDetail',component:LapidetailComponent, outlet:"outlet1"},
+  {path:'lapiOffers',component:LapiOffersComponent,outlet:"outlet2"},
   {path:'led',component:LEDComponent},
   {path:'washingM',component:WashingMashineComponent},
   {path:'dashboard',canActivate:[AuthGuard,AdminGuard],component:DashboardComponent},

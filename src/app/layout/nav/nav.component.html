@@ -1,10 +1,12 @@
 <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Babar Electronics</a>
+      <a id="logo-container" href="#" class="brand-logo">logo</a>
       <ul class="right hide-on-med-and-down">
         <li><a routerLink="home">home</a></li>
         <li><a  routerLink="mobile">Mobile parts</a></li>
         <li><a routerLink="lapi">Laptops</a></li>
+        <li><a [routerLink]="[{outlets:{outlet1:['lapiDetail']}}]">Laptop details</a></li>
+        <li><a [routerLink]="[{outlets:{outlet2:['lapiOffers']}}]">Laptop Offers</a></li>
         <li><a *ngIf="!isLogin()" routerLink="login">Login</a></li>
         <li><a *ngIf="isLogin()" routerLink="home" (click)="logout()">Logout</a></li>
         <li><a routerLink="dashboard">Dashboard</a></li>
@@ -39,6 +41,7 @@
         <li><a routerLink="washingM">Washing Machine</a></li>
         <li><a routerLink="/lazy-child/lazy-child">Lazy</a></li>
         <li><a routerLink="/lazy-child/lazy-child2">Lazy2</a></li>
+        
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>

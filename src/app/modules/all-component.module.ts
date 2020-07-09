@@ -18,6 +18,7 @@ import { MotoComponent } from '../products/mob-part/moto/moto.component';
 import { SamComponent } from '../products/mob-part/sam/sam.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AllPipesModule } from './all-pipes.module';
+import { AllDirectivesModule } from './all-directives.module';
 
 
 
@@ -37,13 +38,16 @@ import { AllPipesModule } from './all-pipes.module';
     PagenotfoundComponent, 
     HomeComponent, 
     MotoComponent, 
-    SamComponent
+    SamComponent,
+    
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
   FormsModule,
-  AllPipesModule
+  AllPipesModule,
+AllDirectivesModule,
+
 
   ],
   exports:[

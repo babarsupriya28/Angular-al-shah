@@ -1,0 +1,12 @@
+<form>
+    <div class="input-field">
+    <label>UserName</label>
+    <input type="text" name="uname" ngModel #tempVar="ngModel" required (keyup)="log(tempVar)" minlength="3" pattern="Angular">
+    <div style="color: red;" *ngIf="tempVar.touched ">this field required
+    <div style="color: red;" *ngIf="tempVar.errors.required">this field required</div>
+    <div style="color: red;" *ngIf="tempVar.errors.minlength ">min 3 char mand.....!</div>
+    <div style="color: red;" *ngIf="tempVar.errors.pattern ">pattern</div>
+</div>
+
+</div>
+</form>

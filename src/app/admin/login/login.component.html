@@ -1,7 +1,16 @@
-<p>login </p>
-<input type="text" #user /><br>
-<input type="text" #pass /><br>
-<button (click)="check(user.value,pass.value)">Login</button>
+
+<form class="fr">
+   
+<input type="text" #user placeholder="UserName"/><br>
+<input type="text" #pass placeholder="Password"/><br><br>
+<!-- <button (click)="check(user.value,pass.value)">Login</button> -->
+<a class="waves-effect waves-light btn-small" (click)="check(user.value,pass.value)">Login</a><br><br>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+</form>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
 
 
 <br>

@@ -1,3 +1,7 @@
+import { TemplateDrivenComponent } from './../forms/template-driven/template-driven.component';
+import { UpdateProductComponent } from './../admin/update-product/update-product.component';
+import { AddProductComponent } from './../admin/add-product/add-product.component';
+import { AllProductComponent } from './../admin/all-product/all-product.component';
 import { LapiOffersComponent } from './../products/laptops/lapi-offers/lapi-offers.component';
 import { LapidetailComponent } from './../products/laptops/lapidetail/lapidetail.component';
 import { AdminGuard } from './../guards/admin.guard';
@@ -33,16 +37,22 @@ children:[
   {path:'lapiOffers',component:LapiOffersComponent,outlet:"outlet2"},
   {path:'led',component:LEDComponent},
   {path:'washingM',component:WashingMashineComponent},
-  {path:'dashboard',canActivate:[AuthGuard,AdminGuard],component:DashboardComponent},
+  {path:'dashboard',canActivate:[AuthGuard,AdminGuard],component:DashboardComponent,
+children:[
+  {path:'allproducts',component:AllProductComponent},
+  {path:'addproducts',component:AddProductComponent},
+  {path:'updateproduct',component:UpdateProductComponent}
+]
+
+},
   {path:'login',component:LoginComponent},
   {
     path: 'lazy-child',
     loadChildren: '../modules/lazy/lazy.module#LazyModule',
   },
+  {path:'templatedriven',component:TemplateDrivenComponent},
   {path:'**',component:PagenotfoundComponent},
- 
-
-];
+ ];
 
 @NgModule({
   declarations: [],

@@ -1,0 +1,26 @@
+<table class="highlight responsive-table">
+    <thead>
+      <tr>
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>description</th>
+          <th>Quantity</th>
+          <th>Item Price</th>
+          <th>Country</th>
+          <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let product of allproducts">
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td> 
+        <td>{{product.inStock}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.country}}</td>
+        <td><a class="waves-effect waves-light btn-small">Edit</a>&nbsp;<a class="waves-effect waves-light btn-small">Delete</a></td>
+      </tr>
+      
+    </tbody>
+  </table>

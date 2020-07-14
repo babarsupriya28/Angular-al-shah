@@ -1,0 +1,10 @@
+.fr{
+    margin:20px;
+    width: 600px;
+    background-image: linear-gradient(rgb(25, 122, 160),white);
+    box-shadow: 10px 10px 10px 10px gray;
+   
+}
+a{
+    float: right;
+}

@@ -49,6 +49,10 @@ import { HostDirective } from './directives/host.directive';
 import { AllDirectivesModule } from './modules/all-directives.module';
 import { LapidetailComponent } from './products/laptops/lapidetail/lapidetail.component';
 import { LapiOffersComponent } from './products/laptops/lapi-offers/lapi-offers.component';
+import { AllProductComponent } from './admin/all-product/all-product.component';
+import { AddProductComponent } from './admin/add-product/add-product.component';
+import { UpdateProductComponent } from './admin/update-product/update-product.component';
+import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
 
 
 @NgModule({
@@ -59,6 +63,10 @@ import { LapiOffersComponent } from './products/laptops/lapi-offers/lapi-offers.
     DashboardComponent,
     LapidetailComponent,
     LapiOffersComponent,
+    AllProductComponent,
+    AddProductComponent,
+    UpdateProductComponent,
+    TemplateDrivenComponent,
     // HostDirective,
     // LazyTwoComponent,
     // LazyOneComponent, 

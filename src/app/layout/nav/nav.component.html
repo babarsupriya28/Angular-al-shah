@@ -1,46 +1,55 @@
+<!--dropdown content for laptop-->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a routerLink="lapi">Laptops</a></li>
+  <li><a [routerLink]="[{outlets:{outlet1:['lapiDetail']}}]">Laptop details</a></li>
+  <li><a [routerLink]="[{outlets:{outlet2:['lapiOffers']}}]">Laptop Offers</a></li>
+
+</ul>
+
+<!--dropdown content for laptop-->
+<ul id="dropdown2" class="dropdown-content">
+  <li><a routerLink="/lazy-child/lazy-child">Lazy</a></li>
+  <li><a routerLink="/lazy-child/lazy-child2">Lazy2</a></li>
+</ul>
+
+<!--dropdown content for laptop-->
+<ul id="dropdown3" class="dropdown-content">
+  <li><a  routerLink="mobile">Mobile parts</a></li>
+  <li><a routerLink="mobile/moto">Moto</a></li>
+  <li><a routerLink="mobile/sam">Samsung</a></li>
+</ul>
+
+<!--Nav start-->
 <nav class="white" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo">logo</a>
       <ul class="right hide-on-med-and-down">
         <li><a routerLink="home">home</a></li>
-        <li><a  routerLink="mobile">Mobile parts</a></li>
-        <li><a routerLink="lapi">Laptops</a></li>
-        <li><a [routerLink]="[{outlets:{outlet1:['lapiDetail']}}]">Laptop details</a></li>
-        <li><a [routerLink]="[{outlets:{outlet2:['lapiOffers']}}]">Laptop Offers</a></li>
-        <li><a *ngIf="!isLogin()" routerLink="login">Login</a></li>
-        <li><a *ngIf="isLogin()" routerLink="home" (click)="logout()">Logout</a></li>
-        <li><a routerLink="dashboard">Dashboard</a></li>
         <li><a routerLink="led">LED</a></li>
         <li><a routerLink="washingM">Washing Machine</a></li>
-        <li><a routerLink="/lazy-child/lazy-child">Lazy</a></li>
-        <li><a routerLink="/lazy-child/lazy-child2">Lazy2</a></li>
+        <li><a class="dropdown-trigger" data-target="dropdown3" >Mobile parts<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" data-target="dropdown2" >Lazy<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" data-target="dropdown1" >Laptops<i class="material-icons right">arrow_drop_down</i></a></li>
+        
+        <li><a routerLink="dashboard">Dashboard</a></li>
+        <li><a *ngIf="!isLogin()" routerLink="login">Login</a></li>
+        <li><a *ngIf="isLogin()" routerLink="home" (click)="logout()">Logout</a></li>
+
+        <li><a routerLink="templatedriven">Template</a></li>
+
 
       </ul>
-      <!-- Dropdown Structure -->
-  <!-- <ul id='dropdown1' class='dropdown-content'>
-    
-    <li><a routerLink="moto">Moto</a></li>
-    <li><a routerLink="sam">Samsung</a></li>
-    
-  </ul> -->
-  <!-- <ul class="right hide-on-med-and-down">
-    <li><a routerLink="/mobile">Mobile Parts</a></li>
-    <li><a >Moto</a></li>
-    <li><a >Samsung</a></li>
-    
-  </ul> -->
-  
+      
       <ul id="nav-mobile" class="sidenav">
         <li><a routerLink="home">home</a></li>
-        <li><a  routerLink="mobile">Mobile parts</a></li>
-        <li><a routerLink="lapi">Laptops</a></li>
-        <li><a *ngIf="!isLogin()" routerLink="login">Login</a></li>
-        <li><a *ngIf="isLogin()" routerLink="home" (click)="logout()">Logout</a></li>
-        <li><a routerLink="dashboard">Dashboard</a></li>
         <li><a routerLink="led">LED</a></li>
         <li><a routerLink="washingM">Washing Machine</a></li>
-        <li><a routerLink="/lazy-child/lazy-child">Lazy</a></li>
-        <li><a routerLink="/lazy-child/lazy-child2">Lazy2</a></li>
+        <li><a class="dropdown-trigger" data-target="dropdown3" >Mobile parts<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" data-target="dropdown2" >Lazy<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-trigger" data-target="dropdown1" >Laptops<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a routerLink="dashboard">Dashboard</a></li>
+        <li><a *ngIf="!isLogin()" routerLink="login">Login</a></li>
+        <li><a *ngIf="isLogin()" routerLink="home" (click)="logout()">Logout</a></li>
         
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
